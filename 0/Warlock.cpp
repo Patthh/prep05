@@ -4,7 +4,7 @@ const s &Warlock::getName() const{
 	return (this -> _n);
 }
 const s &Warlock::getTitle() const{
-	return (this -> _n);
+	return (this -> _t);
 }
 void Warlock::setTitle(const s &t){
 	this -> _t = t;
