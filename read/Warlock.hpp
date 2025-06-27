@@ -16,7 +16,7 @@ class Warlock{
 		str _name, _title;
 		map<str, ASpell*> _sB;
 	public:
-		Warlock();
+		Warlock(const str &name, const str &title);
 		~Warlock();
 		const str &getName() const;
 		const str &getTitle() const;
