@@ -82,42 +82,42 @@ void Warlock::launchSpell(str spellName, const ATarget &target)
 //   richard.launchSpell("Fireball", *wall);
 // }
 
-int main()
-{
-  Warlock richard("Richard", "foo");
-  richard.setTitle("Hello, I'm Richard the Warlock!");
-  BrickWall model1;
+// int main()
+// {
+//   Warlock richard("Richard", "foo");
+//   richard.setTitle("Hello, I'm Richard the Warlock!");
+//   BrickWall model1;
 
-  Polymorph* polymorph = new Polymorph();
-  TargetGenerator tarGen;
+//   Polymorph* polymorph = new Polymorph();
+//   TargetGenerator tarGen;
 
-  tarGen.learnTargetType(&model1);
-  richard.learnSpell(polymorph);
+//   tarGen.learnTargetType(&model1);
+//   richard.learnSpell(polymorph);
 
-  Fireball* fireball = new Fireball();
-  richard.learnSpell(fireball);
+//   Fireball* fireball = new Fireball();
+//   richard.learnSpell(fireball);
 
-  // Debug: print what type was actually learned
-  cout << "Learned target type: '" << model1.getType() << "'" << endl;
+//   // Debug: print what type was actually learned
+//   cout << "Learned target type: '" << model1.getType() << "'" << endl;
   
-  ATarget* wall = tarGen.createTarget("Inconspicuous Red-brick Wall");
+//   ATarget* wall = tarGen.createTarget("Inconspicuous Red-brick Wall");
   
-  // Debug: check if wall is NULL
-  if (wall == NULL) {
-      cout << "ERROR: wall is NULL!" << endl;
-      return 1;
-  }
+//   // Debug: check if wall is NULL
+//   if (wall == NULL) {
+//       cout << "ERROR: wall is NULL!" << endl;
+//       return 1;
+//   }
   
-  cout << "Created target type: '" << wall->getType() << "'" << endl;
+//   cout << "Created target type: '" << wall->getType() << "'" << endl;
 
-  richard.introduce();
-  richard.launchSpell("Polymorph", *wall);
-  richard.launchSpell("Fireball", *wall);
+//   richard.introduce();
+//   richard.launchSpell("Polymorph", *wall);
+//   richard.launchSpell("Fireball", *wall);
   
-  // Clean up
-  delete wall;
-  delete polymorph;
-  delete fireball;
+//   // Clean up
+//   delete wall;
+//   delete polymorph;
+//   delete fireball;
   
-  return 0;
-}
+//   return 0;
+// }
