@@ -24,5 +24,5 @@ class Warlock{
 		void introduce() const;
 		void learnSpell(ASpell *spell);
 		void forgetSpell(str spellName);
-		void launchSpell(str spellName, const ATarget &target)
+		void launchSpell(str spellName, const ATarget &target);
 };

@@ -1,6 +1,8 @@
 #include "Warlock.hpp"
 #include "ASpell.hpp"
 #include "ATarget.hpp"
+typedef std::map<str, ASpell *> uwu;
+
 
 Warlock::Warlock(const str &n, const str &t): _name(n), _title(t){
 	cout << getName() << ": This looks like another boring day." << endl;
@@ -34,7 +36,7 @@ void Warlock::learnSpell(ASpell *spell)
 
 void Warlock::forgetSpell(str spellName)
 {
-    map<str, ASpell *>::iterator it = _sB.find(spellName);
+    uwu::iterator it = _sB.find(spellName);
     if (it != _sB.end())
     {
         delete it->second;
@@ -49,24 +51,24 @@ void Warlock::launchSpell(str spellName, const ATarget &target)
         it->second->launch(target);
 }
 
-#include "Warlock.hpp"
-#include "ATarget.hpp"
-#include "ASpell.hpp"
-#include "Dummy.hpp"
-#include "Fwoosh.hpp"
+// #include "Warlock.hpp"
+// #include "ATarget.hpp"
+// #include "ASpell.hpp"
+// #include "Dummy.hpp"
+// #include "Fwoosh.hpp"
 
-int main()
-{
-  Warlock richard("Richard", "the Titled");
+// int main()
+// {
+//   Warlock richard("Richard", "the Titled");
 
-  Dummy bob;
-  Fwoosh* fwoosh = new Fwoosh();
+//   Dummy bob;
+//   Fwoosh* fwoosh = new Fwoosh();
 
-  richard.learnSpell(fwoosh);
+//   richard.learnSpell(fwoosh);
 
-  richard.introduce();
-  richard.launchSpell("Fwoosh", bob);
+//   richard.introduce();
+//   richard.launchSpell("Fwoosh", bob);
 
-  richard.forgetSpell("Fwoosh");
-  richard.launchSpell("Fwoosh", bob);
-}
+//   richard.forgetSpell("Fwoosh");
+//   richard.launchSpell("Fwoosh", bob);
+// }

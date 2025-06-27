@@ -11,7 +11,7 @@ class ASpell;
 class ATarget{
 	protected:
 		str _target;
-	private:
+	public:
 		ATarget(const str &target);
 		virtual ~ATarget();
 		const str &getType() const;
