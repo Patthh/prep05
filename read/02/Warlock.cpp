@@ -59,6 +59,29 @@ void Warlock::launchSpell(str spellName, const ATarget &target)
 #include "ASpell.hpp"
 #include "SpellBook.hpp"
 
+// int main()
+// {
+//   Warlock richard("Richard", "foo");
+//   richard.setTitle("Hello, I'm Richard the Warlock!");
+//   BrickWall model1;
+
+//   Polymorph* polymorph = new Polymorph();
+//   TargetGenerator tarGen;
+
+//   tarGen.learnTargetType(&model1);
+//   richard.learnSpell(polymorph);
+
+//   Fireball* fireball = new Fireball();
+
+//   richard.learnSpell(fireball);
+
+//   ATarget* wall = tarGen.createTarget("Inconspicuous Red-brick Wall");
+
+//   richard.introduce();
+//   richard.launchSpell("Polymorph", *wall);
+//   richard.launchSpell("Fireball", *wall);
+// }
+
 int main()
 {
   Warlock richard("Richard", "foo");
@@ -72,12 +95,29 @@ int main()
   richard.learnSpell(polymorph);
 
   Fireball* fireball = new Fireball();
-
   richard.learnSpell(fireball);
 
+  // Debug: print what type was actually learned
+  cout << "Learned target type: '" << model1.getType() << "'" << endl;
+  
   ATarget* wall = tarGen.createTarget("Inconspicuous Red-brick Wall");
+  
+  // Debug: check if wall is NULL
+  if (wall == NULL) {
+      cout << "ERROR: wall is NULL!" << endl;
+      return 1;
+  }
+  
+  cout << "Created target type: '" << wall->getType() << "'" << endl;
 
   richard.introduce();
   richard.launchSpell("Polymorph", *wall);
   richard.launchSpell("Fireball", *wall);
+  
+  // Clean up
+  delete wall;
+  delete polymorph;
+  delete fireball;
+  
+  return 0;
 }
