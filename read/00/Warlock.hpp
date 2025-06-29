@@ -2,18 +2,17 @@
 
 #include <iostream>
 
-typedef std::string s;
+typedef std::string str;
 using std::cout, std::endl;
 
 class Warlock{
 	private:
-		s _n;
-		s _t;
+		str _name, _title;
 	public:
-		Warlock(const s &n, const s &t);
+		Warlock(const str &name, const str &title);
 		~Warlock();
-		const s &getName() const;
-		const s &getTitle() const;
-		void setTitle(const s &t);
+		const str &getName() const;
+		const str &getTitle() const;
+		void setTitle(const str &title);
 		void introduce() const;
 };
