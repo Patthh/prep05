@@ -4,16 +4,17 @@
 #include <string>
 
 class ATarget;
+typedef std::string str;
 
 class TargetGenerator{
 private:
-	std::map<std::string, ATarget*> _targets;
+	std::map<str, ATarget*> _targets;
 	TargetGenerator(const TargetGenerator&);
 	TargetGenerator& operator=(const TargetGenerator&);
 public:
 	TargetGenerator();
 	~TargetGenerator();
 	void learnTargetType(ATarget* target);
-	void forgetTargetType(std::string const &targetType);
-	ATarget* createTarget(std::string const &targetType);
+	void forgetTargetType(str const &targetType);
+	ATarget* createTarget(str const &targetType);
 };

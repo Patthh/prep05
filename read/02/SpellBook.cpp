@@ -1,7 +1,7 @@
 #include "SpellBook.hpp"
 #include "ASpell.hpp"
 
-typedef std::map<std::string, ASpell*> uwu;
+typedef map<str, ASpell*> uwu;
 
 SpellBook::SpellBook(){}
 
