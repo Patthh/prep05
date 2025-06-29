@@ -3,8 +3,7 @@
 #include <iostream>
 
 typedef std::string str;
-using	std::cout;
-using	std::endl;
+using	std::cout, std::endl;
 
 class ASpell;
 
