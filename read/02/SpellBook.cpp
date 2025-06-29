@@ -20,7 +20,7 @@ void SpellBook::learnSpell(ASpell* spell){
 		_spells[spell->getName()] = spell->clone();
 }
 
-void SpellBook::forgetSpell(std::string const &spellName){
+void SpellBook::forgetSpell(str const &spellName){
 	uwu::iterator it = _spells.find(spellName);
 	if (it != _spells.end()){
 		delete it->second;
@@ -28,7 +28,7 @@ void SpellBook::forgetSpell(std::string const &spellName){
 	}
 }
 
-ASpell* SpellBook::createSpell(std::string const &spellName){
+ASpell* SpellBook::createSpell(str const &spellName){
 	uwu::iterator it = _spells.find(spellName);
 	if (it != _spells.end())
 		return it->second->clone();

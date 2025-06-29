@@ -1,6 +1,7 @@
 #include "Warlock.hpp"
 #include "ASpell.hpp"
 #include "ATarget.hpp"
+
 typedef std::map<str, ASpell *> uwu;
 
 
@@ -40,13 +41,13 @@ void Warlock::forgetSpell(str spellName)
     if (it != _sB.end())
     {
         delete it->second;
-        _sB.erase(it);  // Use iterator instead of key
+        _sB.erase(it);
     }
 }
 
 void Warlock::launchSpell(str spellName, const ATarget &target)
 {
-    map<str, ASpell *>::iterator it = _sB.find(spellName);
+    uwu::iterator it = _sB.find(spellName);
     if (it != _sB.end())
         it->second->launch(target);
 }
