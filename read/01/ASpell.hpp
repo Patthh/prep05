@@ -3,7 +3,8 @@
 #include <iostream>
 
 typedef std::string str;
-using std::cout, std::endl;
+using std::cout;
+using std::endl;
 
 class ATarget;
 

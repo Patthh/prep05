@@ -5,7 +5,9 @@
 #include <map>
 
 typedef std::string str;
-using std::cout, std::endl, std::map;
+using std::cout;
+using std::endl;
+using std::map;
 
 class ASpell;
 class ATarget;
