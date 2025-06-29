@@ -5,9 +5,7 @@
 #include <map>
 
 typedef std::string str;
-using std::cout;
-using std::endl;
-using std::map;
+using std::cout, std::endl, std::map;
 
 class ASpell;
 class ATarget;
@@ -24,6 +22,6 @@ class Warlock{
 		void setTitle(const str &title);
 		void introduce() const;
 		void learnSpell(ASpell *spell);
-		void forgetSpell(str spellName);
-		void launchSpell(str spellName, const ATarget &target);
+		void forgetSpell(str spell);
+		void launchSpell(str spell, const ATarget &target);
 };
